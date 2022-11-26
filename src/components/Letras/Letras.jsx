@@ -1,7 +1,7 @@
 import { Letra } from "../Letra/Letra";
 import { StyleLetras } from "./style";
 
-export const  Letras = ({ darPalpite, tentativas, alfabeto })  => {
+export const  Letras = ({ darPalpite, tentativas, alfabeto, jogoFinalizado })  => {
 
   return (
     <StyleLetras>
@@ -11,6 +11,7 @@ export const  Letras = ({ darPalpite, tentativas, alfabeto })  => {
         key={letra} 
         darPalpite={darPalpite}
         tentativas={tentativas}
+        jogoFinalizado={jogoFinalizado}
       />)}
     </StyleLetras>
   )

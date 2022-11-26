@@ -9,10 +9,10 @@ import { StyleJogo } from './style';
 
 const imagensForca = [forca0, forca1, forca2, forca3, forca4, forca5, forca6];
 
-export const Jogo = ({ quantidadeErros, palavra, clickEscolherPalavra }) => {
+export const Jogo = ({ quantidadeErros, palavra, clickEscolherPalavra, corPalavraSecreta }) => {
 
   return (
-    <StyleJogo>
+    <StyleJogo corPalavraSecreta={corPalavraSecreta}>
       <div>
         <img src={imagensForca[quantidadeErros]} alt="Quantidade de erros" />
       </div>

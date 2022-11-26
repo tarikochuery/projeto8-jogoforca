@@ -1,10 +1,10 @@
 import { StyleLetra } from "./style";
 
-export const Letra = ({ letra, darPalpite, tentativas }) => {
+export const Letra = ({ letra, darPalpite, tentativas, jogoFinalizado }) => {
   return (
-    <StyleLetra 
+    <StyleLetra
       onClick={() => darPalpite(letra)}
-      disabled={tentativas.includes(letra)}
+      disabled={tentativas.includes(letra) || jogoFinalizado}
     >
       {letra.toUpperCase()}
     </StyleLetra>

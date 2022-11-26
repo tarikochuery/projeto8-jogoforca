@@ -34,5 +34,6 @@ export const StyleJogo = styled.div`
   & p {
     font-weight: 700px;
     font-size: 50px;
+    color: ${props => props.corPalavraSecreta};
   }
 `
