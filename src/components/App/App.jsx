@@ -17,22 +17,19 @@ function App() {
   const [corPalavraSecreta, setCorPalavraSecreta] = useState('#000')
   const [palavraSecretaRenderizada, setPalavraSecretaRenderizada] = useState('');
 
-  
+  if(!jogoFinalizado){
+    if(palavraSecretaRenderizada && !palavraSecretaRenderizada.includes('_')){
+      setJogoFinalizado(true)
+      setCorPalavraSecreta(VERDE)
+      setPalavraSecretaRenderizada(palavraSecreta)
+    }
+  }
 
-  console.log(palavraSecreta)
-
-  const verificarSeJogoFoiFinalizado = () => {
+  const verificarSeUsouTodasAsTentativas = () => {
     console.log('verifiquei')
     if (erros === 5) {
       setJogoFinalizado(true)
       setCorPalavraSecreta(VERMELHO)
-      setPalavraSecretaRenderizada(palavraSecreta)
-      return
-    }
-
-    if (!palavraSecretaRenderizada.includes('_')) {
-      setJogoFinalizado(true)
-      setCorPalavraSecreta(VERDE)
       setPalavraSecretaRenderizada(palavraSecreta)
       return
     }
@@ -78,7 +75,7 @@ function App() {
       setPalavraSecretaRenderizada(novaPalavraSecretaRenderizada)
     }
 
-    verificarSeJogoFoiFinalizado()
+    verificarSeUsouTodasAsTentativas()
   };
 
   const handleClickChute = (palavra) => {
