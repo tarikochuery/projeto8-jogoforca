@@ -34,7 +34,7 @@ export const Jogo = ({
         >Escolher Palavra</button>
         <p
           data-test="word"
-          data-answer = {!jogoFinalizado ? palavraSecreta : ''}
+          data-answer={palavraSecreta}
         >{palavra}</p>
       </div>
     </StyleJogo>
