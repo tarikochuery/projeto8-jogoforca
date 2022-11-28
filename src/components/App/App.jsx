@@ -24,7 +24,7 @@ function App() {
       setJogoFinalizado(true);
       setCorPalavraSecreta(VERDE);
       setPalavraSecretaRenderizada(palavraSecreta);
-    } else if ( erros === 6 ) {
+    } else if (erros === MAX_ERROS) {
       setJogoFinalizado(true);
       setCorPalavraSecreta(VERMELHO);
       setPalavraSecretaRenderizada(palavraSecreta);
@@ -93,6 +93,8 @@ function App() {
         palavra={palavraSecretaRenderizada}
         clickEscolherPalavra={handleClickEscolherPalavra}
         corPalavraSecreta={corPalavraSecreta}
+        jogoFinalizado={jogoFinalizado}
+        palavraSecreta={palavraSecreta}
       />
       <Letras
         darPalpite={handeClickLetra}
