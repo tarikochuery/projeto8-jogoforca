@@ -3,6 +3,12 @@ import { StyleChute } from "./style";
 
 export const Chute = ({ chutar, jogoFinalizado }) => {
   const [chute, setChute] = useState('')
+
+  const handleClick = () => {
+    chutar(chute)
+    setChute('')
+  }
+  
   return (
     <StyleChute>
       <p>
@@ -14,7 +20,7 @@ export const Chute = ({ chutar, jogoFinalizado }) => {
         type="text" 
         disabled={jogoFinalizado}
       />
-      <button disabled={jogoFinalizado} onClick={() => chutar(chute)}>Chutar</button>
+      <button disabled={jogoFinalizado} onClick={handleClick}>Chutar</button>
     </StyleChute>
   );
 };
