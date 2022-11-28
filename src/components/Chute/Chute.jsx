@@ -8,19 +8,24 @@ export const Chute = ({ chutar, jogoFinalizado }) => {
     chutar(chute)
     setChute('')
   }
-  
+
   return (
     <StyleChute>
       <p>
         Já sei a palavra
       </p>
-      <input 
+      <input
+        data-test="guess-input"
         value={chute} 
         onChange={(e) => setChute(e.target.value)} 
         type="text" 
         disabled={jogoFinalizado}
       />
-      <button disabled={jogoFinalizado} onClick={handleClick}>Chutar</button>
+      <button 
+        data-test="guess-button"
+        disabled={jogoFinalizado} 
+        onClick={handleClick}
+      >Chutar</button>
     </StyleChute>
   );
 };

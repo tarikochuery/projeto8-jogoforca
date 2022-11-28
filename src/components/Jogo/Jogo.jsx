@@ -9,16 +9,33 @@ import { StyleJogo } from './style';
 
 const imagensForca = [forca0, forca1, forca2, forca3, forca4, forca5, forca6];
 
-export const Jogo = ({ quantidadeErros, palavra, clickEscolherPalavra, corPalavraSecreta }) => {
+export const Jogo = ({ 
+  quantidadeErros, 
+  palavra, 
+  clickEscolherPalavra, 
+  corPalavraSecreta,
+  jogoFinalizado,
+  palavraSecreta
+}) => {
 
   return (
     <StyleJogo corPalavraSecreta={corPalavraSecreta}>
       <div>
-        <img src={imagensForca[quantidadeErros]} alt="Quantidade de erros" />
+        <img 
+          data-test="game-image"
+          src={imagensForca[quantidadeErros]} 
+          alt="Quantidade de erros" 
+        />
       </div>
       <div>
-        <button onClick={clickEscolherPalavra} >Escolher Palavra</button>
-        <p>{palavra}</p>
+        <button 
+          data-test="choose-word" 
+          onClick={clickEscolherPalavra} 
+        >Escolher Palavra</button>
+        <p
+          data-test="word"
+          data-answer = {!jogoFinalizado ? palavraSecreta : ''}
+        >{palavra}</p>
       </div>
     </StyleJogo>
   );
